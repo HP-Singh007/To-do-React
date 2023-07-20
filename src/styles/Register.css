@@ -1,0 +1,54 @@
+.registerBg{
+    width:100vw;
+    min-height:100vh;
+    background-color: rgb(236, 200, 255);
+    display:flex;
+    align-items: center;
+    justify-content: center;
+
+    
+}
+.register{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    width:450px;
+    height:550px;
+    padding:20px 0px;
+    border:1px solid white;
+    background-color: rgba(255, 255, 255, 0.771);
+}
+.register h1{
+    text-align: center;
+    font-size: 3rem;
+    color:purple;
+    margin:20px;
+}
+.register input{
+    padding:15px;
+    border-radius: 15px;
+    width:80%;
+    margin:10px;
+    border:1px solid black;
+}
+#registerBtn{
+    padding:12px 20px;
+    color:white;
+    background-color: purple;
+    margin:20px;
+    border-radius: 10px;
+    transition: 0.1s;
+    font-size: 1rem;
+    border:0px;
+}
+#registerBtn:hover{
+    cursor: pointer;
+    transform: scale(1.05);
+}
+.register p{
+    color:rgb(119, 119, 119);;
+}
+#signupLink{
+    text-decoration: none;
+    color:purple;
+}
