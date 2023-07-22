@@ -1,12 +1,15 @@
 .loginBg{
     width:100vw;
     min-height:100vh;
-    background-color: rgb(236, 200, 255);
     display:flex;
     align-items: center;
-    justify-content: center;
-
-    
+    justify-content: center;   
+    background-image: linear-gradient(rgba(6, 6, 6, 0.9),rgba(0, 0, 0, 0.334)),url(../images/bg.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position-x:12vw ;
+    background-position-y:20px ;
+    background-color: black;
 }
 .login{
     display:flex;
@@ -15,13 +18,14 @@
     width:450px;
     height:550px;
     padding:20px 0px;
-    border:1px solid white;
-    background-color: rgba(255, 255, 255, 0.771);
+    border:1px solid rgba(255, 255, 255, 0.23);
+    border-top: 3px solid orange;
+    background-color: rgba(0, 0, 0, 0.181);
 }
 .login h1{
     text-align: center;
     font-size: 3rem;
-    color:purple;
+    color:orange;
     margin:20px;
 }
 .login input{
@@ -30,11 +34,12 @@
     width:80%;
     margin:10px;
     border:1px solid black;
+    font-size: 1vw;
 }
 #loginBtn{
     padding:12px 20px;
     color:white;
-    background-color: purple;
+    background-color: rgb(215, 140, 1);
     margin:20px;
     border-radius: 10px;
     transition: 0.1s;
@@ -46,9 +51,9 @@
     transform: scale(1.05);
 }
 .login p{
-    color:rgb(119, 119, 119);
+    color:rgb(185, 185, 185);
 }
 #signupLink{
     text-decoration: none;
-    color:purple;
+    color:orange;
 }

@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Agdasima&family=Tektur&display=swap');
+nav{
+    position:absolute;
+    top:0px;
+    width:100vw;
+    display:flex;
+    justify-content:space-between;
+    background-color: black;
+    color:orange;
+}
+.navComp{
+    display: flex;
+}
+.navItem{
+    color:orange;
+    padding: 10px 15px 0px 15px;
+    font-size: 2rem;
+    font-family: 'Tektur', cursive;
+}
+.navLink{
+    text-decoration: none;
+    font-size: 2rem;
+    font-family: 'Agdasima', sans-serif;
+}
+.navLink:hover{
+    text-shadow: rgb(255, 255, 0) 0px 5px 5px;
+}
+nav button{
+    background-color: black;
+    border: 0px;
+    position: relative;
+    bottom: 8px;
+}
+nav button:hover{
+    cursor: pointer;
+}

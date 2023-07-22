@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
-import { Link } from "react-router-dom"
+import React, { useContext, useState } from 'react'
+import { Link, Navigate } from "react-router-dom"
 import '../styles/Register.css'
 import axios from 'axios';
 import { toast } from 'react-hot-toast';
-import { server } from '../index';
+import { Context, server } from '../index';
 
 const Register = () => {
   //useStates
@@ -11,11 +11,16 @@ const Register = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [cPassword, setCPassword] = useState('');
+  const { setIsLoading, setIsAuthenticated, isAuthenticated } = useContext(Context);
 
   const submitHandler = async (e) => {
     e.preventDefault();
 
     try {
+      if (password !== cPassword) {
+        return toast.error("Password Doesn't Matches");
+      }
+      setIsLoading(true);
       const { data } = await axios.post(`${server}/users/new`,
         {
           name,
@@ -31,12 +36,17 @@ const Register = () => {
       );
 
       toast.success(data.message);
+      setIsLoading(false);
+      setIsAuthenticated(true);
     }
 
     catch (error) {
       toast.error(error.response.data.message);
+      setIsLoading(false);
+      setIsAuthenticated(false);
     }
   }
+  if (isAuthenticated) { return <Navigate to="/" /> }
   return (
     <div className='registerBg'>
       <form onSubmit={submitHandler}>
@@ -47,14 +57,16 @@ const Register = () => {
             type="text"
             placeholder='Name'
             value={name}
+            required="true"
             onChange={(e) => { setName(e.target.value) }} />
-            
+
           <input
             type="email"
             name="email"
             id="mail"
             placeholder='Email'
             value={email}
+            required="true"
             onChange={(e) => { setEmail(e.target.value) }} />
 
           <input
@@ -63,18 +75,20 @@ const Register = () => {
             id="password"
             placeholder='Password'
             value={password}
+            required="true"
             onChange={(e) => { setPassword(e.target.value) }} />
-            
+
           <input
             type="password"
             name="Cpassword"
             id="Cpassword"
             placeholder='Confirm Password'
             value={cPassword}
+            required="true"
             onChange={(e) => { setCPassword(e.target.value) }} />
 
           <button id="registerBtn" type='submit'>Sign Up</button>
-          <p>Already have Account? <Link to="/" id="signupLink">Log In</Link></p>
+          <p>Already have Account? <Link to="/login" id="loginLink">Log In</Link></p>
         </div>
       </form>
     </div>

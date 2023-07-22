@@ -1,11 +1,13 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext, useState } from 'react';
+import { Link, Navigate } from 'react-router-dom';
 import axios from "axios";
 import { server } from "../index";
 import { toast } from 'react-hot-toast';
 import '../styles/Login.css';
+import {Context} from "../index"
 
 const Login = () => {
+  const {isAuthenticated ,setIsAuthenticated,setIsLoading} = useContext(Context);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -13,6 +15,7 @@ const Login = () => {
     e.preventDefault();
 
     try {
+      setIsLoading(true);
       const {data}=await axios.post(`${server}/users/login`,
         {
           email,
@@ -27,12 +30,18 @@ const Login = () => {
       );
 
       toast.success(data.message);
+      setIsAuthenticated(true);
+      setIsLoading(false);
     } 
-    
+
     catch (error) {
       toast.error(error.response.data.message);
+      setIsAuthenticated(false);
+      setIsLoading(false);
     }
   }
+
+  if(isAuthenticated) return <Navigate to="/" />
 
   return (
     <div className='loginBg'>
@@ -47,13 +56,16 @@ const Login = () => {
             id="mail"
             placeholder='Email'
             value={email}
+            required="true"
             onChange={(e) => { setEmail(e.target.value) }} />
+
           <input
             type="password"
             name="password"
             id="password"
             placeholder='Password'
             value={password}
+            required="true"
             onChange={(e) => { setPassword(e.target.value) }} />
 
           <button id="loginBtn" type='submit'>LOG IN</button>
