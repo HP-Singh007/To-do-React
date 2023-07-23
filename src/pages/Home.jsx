@@ -65,7 +65,7 @@ const Home = () => {
   })
 
   if (!isAuthenticated) {
-    return <Navigate to="/login" />
+    return <Navigate to="/To-do-React/login" />
   };
 
   return (

@@ -24,11 +24,11 @@ const Navbar = () => {
         <h2 className='navItem'>ToDo</h2>
       </div>
       <div id="rightSide" className='navComp'>
-        <Link to="/" className="navItem navLink"><UserCircle2 size={30} color="white" /></Link>
+        <Link to="/To-do-React/" className="navItem navLink"><UserCircle2 size={30} color="white" /></Link>
         {isAuthenticated ?
           (<button onClick={logoutHandler} className="navItem navLink">Logout</button>)
           :
-          (<Link to="/login" className="navItem navLink">Login</Link>)
+          (<Link to="/To-do-React/login" className="navItem navLink">Login</Link>)
         }
       </div>
     </nav>

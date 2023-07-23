@@ -46,7 +46,7 @@ const Register = () => {
       setIsAuthenticated(false);
     }
   }
-  if (isAuthenticated) { return <Navigate to="/" /> }
+  if (isAuthenticated) { return <Navigate to="/To-do-React/" /> }
   return (
     <div className='registerBg'>
       <form onSubmit={submitHandler}>

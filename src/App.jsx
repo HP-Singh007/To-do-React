@@ -17,8 +17,8 @@ function App() {
     axios.get(`${server}/users/me`, {
       withCredentials: true,
     }).then((res) => {
-      setIsLoading(false);
       setIsAuthenticated(true);
+      setIsLoading(false);
     }).catch((error) => {
       setIsLoading(false);
       console.log(error.response.data.message);
@@ -30,9 +30,9 @@ function App() {
       <Navbar />
       <Loader />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="/To-do-React/" element={<Home />} />
+        <Route path="/To-do-React/register" element={<Register />} />
+        <Route path="/To-do-React/login" element={<Login />} />
       </Routes>
       <Toaster />
     </Router>

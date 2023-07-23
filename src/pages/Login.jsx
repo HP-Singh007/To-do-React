@@ -41,7 +41,7 @@ const Login = () => {
     }
   }
 
-  if(isAuthenticated) return <Navigate to="/" />
+  if(isAuthenticated) return <Navigate to="/To-do-React/" />
 
   return (
     <div className='loginBg'>
