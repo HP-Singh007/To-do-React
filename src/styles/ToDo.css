@@ -1,0 +1,61 @@
+#item{
+    background-color: rgb(249, 203, 130);
+    width:19vw;
+    height:300px;
+    color:black;
+    opacity: 0.8;
+    margin:0px 8px;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+#item-complete{
+    background-color: rgba(249, 203, 130, 0.596);
+    width:19vw;
+    height:300px;
+    color:black;
+    opacity: 0.8;
+    margin:0px 8px;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    text-decoration:line-through;
+    
+}
+#header{
+    display:flex;
+    margin:20px;
+}
+#isComplete{
+    width:2vw;
+}
+#titleCard{
+    background-color: rgba(147, 148, 102, 0.651);
+    color:rgb(0, 0, 0);
+    font-size: 1.2vw;
+    font-style: italic;
+    font-weight: bolder;
+    font-family:sans-serif;
+    padding:8px;
+    margin:0px 20px;
+    border-radius: 10px;
+}
+#descCard{
+    padding:10px 20px;
+    height:60%;
+    font-size: 1.4vw;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* border: 1px solid red; */
+}
+#lower{
+    display:flex;
+    justify-content: end;
+}
+.updateIcon{
+    margin:10px 15px 10px 5px;
+    background-color: rgba(255, 255, 255, 0);
+    border:0px;
+}
+.updateIcon:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+}
+

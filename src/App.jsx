@@ -20,11 +20,10 @@ function App() {
       setIsLoading(false);
       setIsAuthenticated(true);
     }).catch((error) => {
-      console.log(error.response.data.message);
       setIsLoading(false);
+      console.log(error.response.data.message);
       setIsAuthenticated(false);
     })
-    console.log(isLoading);
   },[])
   return (
     <Router>
