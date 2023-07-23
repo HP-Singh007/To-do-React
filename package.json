@@ -2,7 +2,7 @@
   "name": "react-todo",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://HP-SINGH007.github.io/todo",
+  "homepage": "https://HP-SINGH007.github.io/To-do-React",
   "dependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@testing-library/jest-dom": "^5.17.0",
