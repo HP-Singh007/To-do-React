@@ -3,7 +3,7 @@ import { FileEdit } from 'lucide-react';
 import { Trash2 } from 'lucide-react';
 import '../styles/ToDo.css'
 
-const ToDoItem = ({ title, description, deleteHandler, id, updateHandler, isCompleted }) => {
+const ToDoItem = ({ title, description, deleteHandler,  editHandler,id, updateHandler, isCompleted }) => {
   return (
     <div id={(isCompleted)?"item-complete":'item'}>
       <div id="header">
@@ -12,7 +12,7 @@ const ToDoItem = ({ title, description, deleteHandler, id, updateHandler, isComp
       </div>
       <div id="descCard">{description}</div>
       <div id="lower">
-        <button className='updateIcon'><FileEdit /></button>
+        <button className='updateIcon' onClick={()=>editHandler(id)}><FileEdit /></button>
         <button className='updateIcon' onClick={() => deleteHandler(id)}><Trash2 color="maroon" /></button>
       </div>
     </div>

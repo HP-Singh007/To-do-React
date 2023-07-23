@@ -9,11 +9,11 @@ import ToDoItem from '../components/ToDoItem';
 import broom from '../images/broom.png'
 
 const Home = () => {
-  const { isAuthenticated } = useContext(Context);
+  const { isAuthenticated , setIsEditing , setEditId } = useContext(Context);
   const [tasks, setTasks] = useState([]);
-  const [title, setTitle] = useState([]);
+  const [title, setTitle] = useState();
   const [creating, setCreating] = useState(false);
-  const [description, setDesciption] = useState([]);
+  const [description, setDesciption] = useState();
 
   const submitHandler = async (e) => {
     e.preventDefault();
@@ -44,6 +44,10 @@ const Home = () => {
     }).catch((error)=>{
       toast.error(error.response.data.message)
     })
+  }
+  const editHandler =(id)=>{
+    setIsEditing(true);
+    setEditId(id);
   }
 
   const updateHandler=(id)=>{
@@ -79,7 +83,7 @@ const Home = () => {
       </div>
       <div><img src={broom} alt="" id={creating?"broom":"no-broom"}/></div>
       <div id='showTask'>
-        {tasks.map((i)=>(<ToDoItem title={i.title} description={i.description} deleteHandler={deleteHandler} id={i._id} updateHandler={updateHandler} isCompleted={i.isCompleted}/>))}
+        {tasks.map((i)=>(<ToDoItem title={i.title} description={i.description} deleteHandler={deleteHandler} editHandler={editHandler} id={i._id} updateHandler={updateHandler} isCompleted={i.isCompleted}/>))}
       </div>
     </div>
   )

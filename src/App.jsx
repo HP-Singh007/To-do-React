@@ -9,8 +9,9 @@ import { Context, server } from "./index";
 import { useContext, useEffect } from "react";
 import Navbar from "./components/Navbar";
 import Loader from "./components/Loader";
+import Edit from "./components/Edit";
 function App() {
-  const {setIsAuthenticated ,setIsLoading,isLoading} = useContext(Context);
+  const { setIsAuthenticated, setIsLoading } = useContext(Context);
 
   useEffect(() => {
     setIsLoading(true);
@@ -24,7 +25,7 @@ function App() {
       console.log(error.response.data.message);
       setIsAuthenticated(false);
     })
-  },[])
+  }, [setIsAuthenticated])
   return (
     <Router>
       <Navbar />
@@ -34,6 +35,7 @@ function App() {
         <Route path="/To-do-React/register" element={<Register />} />
         <Route path="/To-do-React/login" element={<Login />} />
       </Routes>
+      <Edit />
       <Toaster />
     </Router>
   );

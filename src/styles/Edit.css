@@ -1,0 +1,43 @@
+#editBg-none{
+    display:none;
+}
+#editBg{
+    width:100%;
+    min-height:100vh;
+    position: fixed;
+    top:0px;
+    background-color: rgba(0, 0, 0, 0.768);
+}
+#editContainer{
+    position: fixed;
+    top:30%;
+    left:32%;
+    width:35%;
+    height:250px;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+}
+#editContainer span{
+    position: absolute;
+    right: 5px;
+    top:5px;
+}
+#editContainer span:hover{
+    cursor: pointer;
+}
+#editContainer input{
+    padding:10px;
+    font-size: 1.5vw;
+    margin:15px;
+    width:90%;
+}
+#editContainer button{
+    background-color: rgb(91, 132, 255);
+    font-size: 1.5vw;
+    padding:5px;
+    border-radius: 10px;
+}
