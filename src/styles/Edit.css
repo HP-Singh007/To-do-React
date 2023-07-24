@@ -13,8 +13,8 @@
     top:30%;
     left:32%;
     width:35%;
-    height:250px;
-    background-color: rgb(255, 255, 255);
+    height:270px;
+    background-color: rgb(244, 224, 207);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -34,10 +34,25 @@
     font-size: 1.5vw;
     margin:15px;
     width:90%;
+    border-radius: 20px;
+}
+#editContainer #desc{
+    font-size: 1.2vw;
+    height:100px;
+    padding:10px;
+    margin:15px;
+    width:90%;
+    border-radius: 10px;
+    border:0px;
+    
 }
 #editContainer button{
     background-color: rgb(91, 132, 255);
     font-size: 1.5vw;
     padding:5px;
     border-radius: 10px;
+}
+#editContainer button:hover{
+    cursor: pointer;
+    color: white;
 }

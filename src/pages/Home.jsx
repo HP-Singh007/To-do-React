@@ -9,7 +9,7 @@ import ToDoItem from '../components/ToDoItem';
 import broom from '../images/broom.png'
 
 const Home = () => {
-  const { isAuthenticated , setIsEditing , setEditId } = useContext(Context);
+  const { isAuthenticated , setIsEditing , setEditId , setNewTitle , setNewDesc } = useContext(Context);
   const [tasks, setTasks] = useState([]);
   const [title, setTitle] = useState();
   const [creating, setCreating] = useState(false);
@@ -45,9 +45,11 @@ const Home = () => {
       toast.error(error.response.data.message)
     })
   }
-  const editHandler =(id)=>{
+  const editHandler =(id , Title , Desc)=>{
     setIsEditing(true);
     setEditId(id);
+    setNewTitle(Title);
+    setNewDesc(Desc);
   }
 
   const updateHandler=(id)=>{
@@ -83,7 +85,7 @@ const Home = () => {
       </div>
       <div><img src={broom} alt="" id={creating?"broom":"no-broom"}/></div>
       <div id='showTask'>
-        {tasks.map((i)=>(<ToDoItem title={i.title} description={i.description} deleteHandler={deleteHandler} editHandler={editHandler} id={i._id} updateHandler={updateHandler} isCompleted={i.isCompleted}/>))}
+        {tasks.map((i)=>(<ToDoItem title={i.title} description={i.description} deleteHandler={deleteHandler} editHandler={editHandler} id={i._id} Title={i.title} Desc={i.description} updateHandler={updateHandler} isCompleted={i.isCompleted}/>))}
       </div>
     </div>
   )

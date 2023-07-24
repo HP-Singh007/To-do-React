@@ -12,6 +12,8 @@ const AppWrapper = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [isEditing, setIsEditing] = useState(false);
   const [editId, setEditId] = useState('');
+  const[newTitle,setNewTitle]=useState('');
+  const[newDesc,setNewDesc]=useState('');
 
   return (
     <Context.Provider
@@ -23,7 +25,11 @@ const AppWrapper = () => {
         isEditing,
         setIsEditing,
         editId,
-        setEditId
+        setEditId,
+        newTitle,
+        setNewTitle,
+        newDesc,
+        setNewDesc
       }}
     >
       <App />
