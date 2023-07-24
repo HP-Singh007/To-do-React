@@ -109,11 +109,11 @@
 @media screen and (max-width:450px) {
     #item{
         width:95%;
-        height:120px;
+        height:130px;
     }
     #item-complete{
         width:95%;
-        height:120px;
+        height:130px;
     }
     #header{
         margin:5px 10px;
