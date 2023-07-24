@@ -69,7 +69,7 @@ const Login = () => {
             onChange={(e) => { setPassword(e.target.value) }} />
 
           <button id="loginBtn" type='submit'>LOG IN</button>
-          <p>Don't have Account? <Link to="/register" id="signupLink">Sign Up</Link></p>
+          <p>Don't have Account? <Link to="/To-do-React/register" id="signupLink">Sign Up</Link></p>
         </div>
       </form>
     </div>

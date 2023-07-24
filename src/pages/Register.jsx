@@ -88,7 +88,7 @@ const Register = () => {
             onChange={(e) => { setCPassword(e.target.value) }} />
 
           <button id="registerBtn" type='submit'>Sign Up</button>
-          <p>Already have Account? <Link to="/login" id="loginLink">Log In</Link></p>
+          <p>Already have Account? <Link to="/To-do-React/login" id="loginLink">Log In</Link></p>
         </div>
       </form>
     </div>
