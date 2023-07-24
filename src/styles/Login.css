@@ -57,3 +57,13 @@
     text-decoration: none;
     color:orange;
 }
+
+@media only screen and (max-width:510px) {
+    .login{
+        width:320px;
+    }
+    .login input{
+        font-size: 3vw;
+    }
+
+}

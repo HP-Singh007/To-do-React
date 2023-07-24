@@ -85,7 +85,7 @@ const Home = () => {
       </div>
       <div><img src={broom} alt="" id={creating?"broom":"no-broom"}/></div>
       <div id='showTask'>
-        {tasks.map((i)=>(<ToDoItem title={i.title} description={i.description} deleteHandler={deleteHandler} editHandler={editHandler} id={i._id} Title={i.title} Desc={i.description} updateHandler={updateHandler} isCompleted={i.isCompleted}/>))}
+        {tasks.map((i)=>(<ToDoItem title={i.title} description={i.description} deleteHandler={deleteHandler} editHandler={editHandler} id={i._id} Title={i.title} Desc={i.description} updateHandler={updateHandler} isCompleted={i.isCompleted} createdAt={i.createdAt}/>))}
       </div>
     </div>
   )

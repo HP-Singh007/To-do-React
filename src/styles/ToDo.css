@@ -1,6 +1,6 @@
 #item{
     background-color: rgb(249, 203, 130);
-    width:19vw;
+    width:300px;
     height:300px;
     color:black;
     opacity: 0.9;
@@ -10,7 +10,7 @@
 }
 #item-complete{
     background-color: rgb(249, 203, 130);
-    width:19vw;
+    width:300px;
     height:300px;
     color:black;
     opacity: 0.7;
@@ -26,7 +26,7 @@
     margin:20px;
 }
 #isComplete{
-    width:2vw;
+    width:10%;
 }
 #titleCard{
     background-color: rgba(147, 148, 102, 0.651);
@@ -37,7 +37,7 @@
     font-family:sans-serif;
     padding:8px;
     height:fit-content;
-    margin:0px 20px;
+    margin:0px 15px;
     border-radius: 10px;
 }
 #descCard{
@@ -48,6 +48,16 @@
     /* border: 1px solid red; */
 }
 #lower{
+    display: flex;
+    justify-content: space-between;
+}
+#lowerLeft{
+    display: flex;
+    align-items: end;
+    padding:10px;
+    color:rgb(177, 0, 0);
+}
+#lowerRight{
     display:flex;
     justify-content: end;
 }
@@ -61,3 +71,60 @@
     transform: scale(1.1);
 }
 
+@media screen and (max-width:750px) {
+    #item{
+        width:300px;
+        height:200px;
+    }
+    #item-complete{
+        width:300px;
+        height:200px;
+    }
+}
+
+@media screen and (max-width:670px) {
+    #item{
+        width:220px;
+        height:200px;
+    }
+    #item-complete{
+        width:220px;
+        height:200px;
+    }
+    #header{
+        margin:8px;
+    }
+    #isComplete{
+        width:5vw;
+    }
+    #titleCard{
+        font-size: 2vw;
+    }
+    #descCard{
+        font-size: 2.5vw;
+        padding:8px 20px;
+    }
+}
+
+@media screen and (max-width:450px) {
+    #item{
+        width:170px;
+        height:190px;
+    }
+    #item-complete{
+        width:170px;
+        height:190px;
+    }
+    #titleCard{
+        font-size: 2.5vw;
+        margin:0px 5px;
+    }
+    #descCard{
+        font-size: 3.3vw;
+        padding:5px 20px;
+        height:55%;
+    }
+    #lowerLeft{
+        font-size: 10px;
+    }
+}

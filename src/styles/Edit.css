@@ -14,7 +14,7 @@
     left:32%;
     width:35%;
     height:270px;
-    background-color: rgb(244, 224, 207);
+    background: linear-gradient(rgb(254, 176, 176),rgb(254, 221, 161));
     display: flex;
     flex-direction: column;
     align-items: center;
