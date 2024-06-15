@@ -1,15 +1,16 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import './App.css';
+import { useContext, useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import { Toaster } from "react-hot-toast"
+import { Context, server } from "./index";
 import Login from "./pages/Login";
 import Home from "./pages/Home";
 import Register from "./pages/Register";
 import axios from "axios";
-import { Context, server } from "./index";
-import { useContext, useEffect } from "react";
 import Navbar from "./components/Navbar";
 import Loader from "./components/Loader";
 import Edit from "./components/Edit";
+
 function App() {
   const { setIsAuthenticated, setIsLoading } = useContext(Context);
 
@@ -17,15 +18,17 @@ function App() {
     setIsLoading(true);
     axios.get(`${server}/users/me`, {
       withCredentials: true,
-    }).then((res) => {
-      setIsAuthenticated(true);
-      setIsLoading(false);
-    }).catch((error) => {
-      setIsLoading(false);
-      console.log(error.response.data.message);
-      setIsAuthenticated(false);
     })
-  }, [setIsAuthenticated])
+      .then((res) => {
+        setIsLoading(false);
+        setIsAuthenticated(true);
+      })
+      .catch((error) => {
+        setIsLoading(false);
+        setIsAuthenticated(false);
+      })
+  }, [])
+
   return (
     <Router>
       <Navbar />

@@ -1,7 +1,7 @@
-import React, { useContext} from 'react'
-import loader from '../images/loader.png'
 import '../styles/Loading.css'
+import React, { useContext} from 'react'
 import { Context } from '../index'
+import loader from '../images/loader.png'
 
 const Loader = () => {
     const {isLoading} = useContext(Context);

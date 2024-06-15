@@ -1,9 +1,9 @@
+import '../styles/Register.css'
 import React, { useContext, useState } from 'react'
 import { Link, Navigate } from "react-router-dom"
-import '../styles/Register.css'
-import axios from 'axios';
 import { toast } from 'react-hot-toast';
 import { Context, server } from '../index';
+import axios from 'axios';
 
 const Register = () => {
   //useStates
