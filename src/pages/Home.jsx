@@ -1,4 +1,3 @@
-import '../styles/Home.css'
 import React, { useContext, useEffect, useState } from 'react'
 import { Navigate } from 'react-router-dom'
 import { toast } from 'react-hot-toast';
@@ -7,6 +6,7 @@ import { PlusCircle } from 'lucide-react';
 import ToDoItem from '../components/ToDoItem';
 import broom from '../images/broom.png'
 import axios from 'axios';
+import '../styles/Home.css'
 
 const Home = () => {
   const { isAuthenticated, setIsEditing, setEditId, setNewTitle, setNewDesc } = useContext(Context);

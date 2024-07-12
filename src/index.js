@@ -31,7 +31,7 @@ const AppWrapper = () => {
         newTitle,
         setNewTitle,
         newDesc,
-        setNewDesc
+        setNewDesc,
       }}
     >
       <App />

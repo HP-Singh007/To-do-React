@@ -12,7 +12,7 @@ import Loader from "./components/Loader";
 import Edit from "./components/Edit";
 
 function App() {
-  const { setIsAuthenticated, setIsLoading } = useContext(Context);
+  const { setIsAuthenticated, setIsLoading} = useContext(Context);
 
   useEffect(() => {
     setIsLoading(true);
