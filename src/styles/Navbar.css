@@ -34,3 +34,22 @@ nav button{
 nav button:hover{
     cursor: pointer;
 }
+#themeBtn{
+    padding: 0;
+}
+#themeBtn span{
+    color:purple;
+    font-family:monospace;
+    font-style: italic;
+    font-size: 1.2vw;
+    font-weight: bold;
+}
+
+@media only screen and (max-width:450px){
+    #themeBtn span{
+        font-size: 4vw;
+    }
+    .navItem{
+        font-size: 8vw !important;
+    }
+}

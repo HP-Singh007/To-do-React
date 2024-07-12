@@ -11,7 +11,7 @@ const Register = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [cPassword, setCPassword] = useState('');
-  const { setIsLoading, setIsAuthenticated, isAuthenticated } = useContext(Context);
+  const { setIsLoading, setIsAuthenticated, isAuthenticated,theme } = useContext(Context);
 
   const submitHandler = async (e) => {
     e.preventDefault();
@@ -48,9 +48,9 @@ const Register = () => {
   }
   if (isAuthenticated) { return <Navigate to="/To-do-React/" /> }
   return (
-    <div className='registerBg'>
+    <div className='registerBg' id={!theme?'registerNormal':''}>
       <form onSubmit={submitHandler}>
-        <div className="register">
+        <div className="register" id={!theme?'regFormNormal':''}>
 
           <h1>Sign Up</h1>
           <input

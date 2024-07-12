@@ -16,6 +16,7 @@ const AppWrapper = () => {
   const [editId, setEditId] = useState('');
   const[newTitle,setNewTitle]=useState('');
   const[newDesc,setNewDesc]=useState('');
+  const [theme,setTheme]=useState(true);
 
   return (
     <Context.Provider
@@ -31,7 +32,9 @@ const AppWrapper = () => {
         newTitle,
         setNewTitle,
         newDesc,
-        setNewDesc
+        setNewDesc,
+        theme,
+        setTheme
       }}
     >
       <App />

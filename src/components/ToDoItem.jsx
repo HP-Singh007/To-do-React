@@ -1,12 +1,15 @@
-import React from 'react'
+import { Context } from '../index';
+import React, { useContext } from 'react'
 import { FileEdit } from 'lucide-react';
 import { Trash2 } from 'lucide-react';
 import '../styles/ToDo.css'
 
 const ToDoItem = ({ title, description, deleteHandler,  editHandler,id, updateHandler, isCompleted ,Title , Desc , createdAt}) => {
 
+const { theme } = useContext(Context);
+  
   return (
-    <div id={(isCompleted)?"item-complete":'item'}>
+    <div id={(isCompleted)?"item-complete":'item'} className={!theme?'itemNormal':''}>
 
       <div id="header">
         <input 

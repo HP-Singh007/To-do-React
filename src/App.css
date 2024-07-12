@@ -2,4 +2,32 @@
     margin:0px;
     padding:0px;
     box-sizing: border-box;
+    transition: all 0.5s ease-in-out;
 }
+::-webkit-scrollbar {
+    display: none;
+}
+
+.homeNormal{
+    background-color: #16265a !important;
+    background-image: none !important;
+}
+.itemNormal{
+    background-color: #bccaff !important;
+}
+#navNormal{
+    background-color: #010c33 !important;
+}
+#createNormal{
+    background-color: #97aef8 !important;
+    border: 1px solid white ;
+}
+#loginNormal, #registerNormal{
+    background-color: lavender !important;
+    background-image: none !important;
+}
+#loginFormNormal,#regFormNormal{
+    background-color: #132150e7 !important;
+    border-radius: 10px !important;
+}
+
