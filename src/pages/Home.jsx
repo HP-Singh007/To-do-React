@@ -9,7 +9,7 @@ import axios from 'axios';
 import '../styles/Home.css'
 
 const Home = () => {
-  const { isAuthenticated, setIsEditing, setEditId, setNewTitle, setNewDesc } = useContext(Context);
+  const { isAuthenticated, setIsEditing, setEditId, setNewTitle, setNewDesc, theme } = useContext(Context);
   const [tasks, setTasks] = useState([]);
   const [title, setTitle] = useState();
   const [creating, setCreating] = useState(false);
@@ -82,7 +82,7 @@ const Home = () => {
   };
 
   return (
-    <div id='home'>
+    <div id='home' className={!theme?"homeNormal":""}>
       <div id='addTask'>
 
         <form onSubmit={submitHandler}>
@@ -102,7 +102,7 @@ const Home = () => {
             onChange={(e) => setDesciption(e.target.value)} 
             required 
           />
-          <button 
+          <button id={!theme?"createNormal":""}
             type='submit' 
             disabled={creating}>
               <PlusCircle color='white' />

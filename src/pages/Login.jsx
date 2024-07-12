@@ -7,7 +7,7 @@ import {Context} from "../index"
 import axios from "axios";
 
 const Login = () => {
-  const {isAuthenticated ,setIsAuthenticated,setIsLoading} = useContext(Context);
+  const {isAuthenticated ,setIsAuthenticated,setIsLoading,theme} = useContext(Context);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -44,9 +44,9 @@ const Login = () => {
   if(isAuthenticated) return <Navigate to="/To-do-React/" />
 
   return (
-    <div className='loginBg'>
+    <div className='loginBg' id={!theme?'loginNormal':''}>
       <form onSubmit={submitHandler}>
-        <div className="login">
+        <div className="login" id={!theme?'loginFormNormal':''}>
 
           <h1>Login</h1>
 
